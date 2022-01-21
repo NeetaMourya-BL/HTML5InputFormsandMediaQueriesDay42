@@ -77,6 +77,17 @@
                 textError.textContent="Name is incorrect";
             }
         })
+        const email = document.querySelector("#email");
+        const emailError=document.querySelector(".email-error");
+        email.addEventListener('input', function () {
+            let nameRegex=RegExp('^[a-z.+_-]+[.a-z0-9]*+@[a-z0-9]+[.a-z]+[.a-z0-9]*$');
+            if(nameRegex.test(email.value)){
+                emailError.textContent="";
+            }
+            else{
+                textError.textContent="email is incorrect";
+            }
+        })
         const Salary=document.querySelector("#Salary");
         const output=document.querySelector('.salary-output');
         Salary.addEventListener('input',function(){
