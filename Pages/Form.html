@@ -106,7 +106,7 @@
         const password = document.querySelector("#password");
         const passwordError = document.querySelector(".password-error");
         password.addEventListener('input', function () {
-            let nameRegex = RegExp('(?=\\S+$).{8,20}$'+'(?=.*[A-Z])'); //UC5Rule2
+            let nameRegex = RegExp('(?=\\S+$).{8,20}$'+'(?=.*[A-Z])'+'(?=.*[0-9])'); //UC5Rule3
             if (nameRegex.test(password.value)) {
                 passwordError.textContent = "";
             }
