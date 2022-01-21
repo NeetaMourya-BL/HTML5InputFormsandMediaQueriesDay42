@@ -1,0 +1,19 @@
+
+.headerContainer{
+display: flex;
+justify-content: center;
+background-color: tomato;
+padding: auto;
+font-weight: bold;
+}
+.main{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.mainContainer{
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
