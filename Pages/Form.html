@@ -80,43 +80,49 @@
         })
         //UC2 email validation
         const email = document.querySelector("#email");
-        const emailError = document.querySelector(".email-error");
+        const emailError = document.querySelector(".email-error"); //^[a-z.+_-]+[.a-z0-9]*+@[a-z0-9]+[.a-z]+[.a-z0-9]*$
+
         email.addEventListener('input', function () {
-            let nameRegex = RegExp('^[a-z.+_-]+[.a-z0-9]*+@[a-z0-9]+[.a-z]+[.a-z0-9]*$');
-            if (nameRegex.test(email.value)) {
+            console.log(email.value);
+            //let emailRegex = RegExp('^[a-z.+_-]+[.a-z0-9]*+@[a-z0-9]+[.a-z]+[.a-z0-9]*$');
+            let emailRegex = RegExp("^[a-z.+_-]+[.a-z0-9]*@[a-z0-9]+[.a-z]+[.a-z0-9]*$");
+
+            if (emailRegex.test(email.value)) {
                 emailError.textContent = "";
             }
             else {
-                textError.textContent = "email is incorrect";
+                emailError.textContent = "email is incorrect";
             }
         })
         //UC3 mobile validation
-        const mobile = document.querySelector("#number");
-        const mobileError = document.querySelector(".mobile-error");
+        const mobile = document.querySelector("#tel");
+        const mobileError = document.querySelector(".telephone-error");
         mobile.addEventListener('input', function () {
-            let nameRegex = RegExp('^[0-9]{2}+[ ][0-9]{10}$');
-            if (nameRegex.test(mobile.value)) {
+            let numberRegex = RegExp('^([0-9]{2}\\s)?[0-9]{10}$');
+            if (numberRegex.test(mobile.value)) {
                 mobileError.textContent = "";
             }
             else {
-                textError.textContent = "mobile is incorrect";
+                mobileError.textContent = "mobile is incorrect";
             }
         })
         //UC5 password validation
-        const password = document.querySelector("#password");
+        const password = document.querySelector("#pwd");
         const passwordError = document.querySelector(".password-error");
         password.addEventListener('input', function () {
-            let nameRegex = RegExp('(?=\\S+$).{8,20}$'+'(?=.*[A-Z])'+'(?=.*[0-9])'+'(?=.*[@#$%^&+=])'); //UC5Rule4
-            if (nameRegex.test(password.value)) {
+            let passwordRegex = RegExp('(?=\\S+$).{8,20}$' + '(?=.*[A-Z])' + '(?=.*[0-9])' + '(?=.*[@#$%^&+=])'); //UC5Rule4
+            if (passwordRegex.test(password.value)) {
                 passwordError.textContent = "";
             }
             else {
-                textError.textContent = "Password is incorrect";
+                passwordError.textContent = "Password is incorrect";
             }
         })
         const Salary = document.querySelector("#Salary");
         const output = document.querySelector('.salary-output');
+
         Salary.addEventListener('input', function () {
+            console.log(Salary.value);
             output.textContent = Salary.value;
         })
     </script>
